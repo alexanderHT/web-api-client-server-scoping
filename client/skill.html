@@ -42,7 +42,10 @@
     <script type="text/javascript" src="./bower_components/materialize/bin/materialize.js"></script>
     <script type="text/javascript" src="./bower_components/purl/purl.js"></script>
     <script type="text/javascript">
-      $('#img-what').hide()
+      $(document).ready(function(){
+        $('#img-what').hide()
+      })
+
       function changeUrl(){
         $('#img-what').show()
         var url = purl(`${window.location.href}`);
