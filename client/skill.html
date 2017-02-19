@@ -5,7 +5,11 @@
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="./bower_components/materialize/bin/materialize.css"  media="screen,projection"/>
-
+    <style media="screen">
+      #img-what{
+        width: 250px
+      }
+    </style>
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
@@ -17,7 +21,7 @@
           <a href="#" class="brand-logo">SKILL</a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="index.html">Home</a></li>
-            <li><a href="skill.html">Skill</a></li>
+            <li><a href="skill.html?title=SUPER+HELLO+WORLD">Skill</a></li>
             <li><a href="meal.html">Meal</a></li>
           </ul>
         </div>
@@ -26,7 +30,10 @@
     <!-- navigation -->
 
     <div class="container">
-      <h1>hallo world</h1>
+      <h1 class="green-text" id="title-url">Get the url query</h1>
+      <img src="img/giphy.gif" alt="what" id="img-what">
+      <h5 class="green-text">look at your url browser now, you see the query with variable title. when you press the button below it will change the title of this page</h5>
+      <a class="waves-effect btn green" onclick="changeUrl()">change title</a>
     </div>
 
     <body>
@@ -35,6 +42,15 @@
     <script type="text/javascript" src="./bower_components/materialize/bin/materialize.js"></script>
     <script type="text/javascript" src="./bower_components/purl/purl.js"></script>
     <script type="text/javascript">
+      $('#img-what').hide()
+      function changeUrl(){
+        $('#img-what').show()
+        var url = purl(`${window.location.href}`);
+        let query = url.attr('query')
+        let result = query.split("title=")[1].replace(new RegExp("\\+","g"),' ')
+        $('#title-url')[0].innerHTML = result
+      }
+
 
     </script>
   </body>
