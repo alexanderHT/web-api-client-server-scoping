@@ -11,10 +11,10 @@
   </head>
 
     <!-- navigation -->
-    <nav class="blue darken-1">
+    <nav class="green darken-1">
       <div class="container">
         <div class="nav-wrapper">
-          <a href="#" class="brand-logo">HOME SWEET HOME</a>
+          <a href="#" class="brand-logo">SKILL</a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="index.html">Home</a></li>
             <li><a href="skill.html">Skill</a></li>
@@ -25,13 +25,9 @@
     </nav>
     <!-- navigation -->
 
-    <!-- content -->
     <div class="container">
-      <h1 id="data-header" class="blue-text">Change the title with what ever you like</h1>
-      <input type="text" id="input-title">
-      <a class="waves-effect btn blue" onclick="change()">Change the title</a>
+      <h1>hallo world</h1>
     </div>
-    <!-- content -->
 
     <body>
     <!--Import jQuery before materialize.js-->
@@ -39,18 +35,6 @@
     <script type="text/javascript" src="./bower_components/materialize/bin/materialize.js"></script>
     <script type="text/javascript" src="./bower_components/purl/purl.js"></script>
     <script type="text/javascript">
-      /* function to change the title */
-      function change(){
-        // assign input to varibale data
-        let data = $('#input-title').val()
-        console.log(data);
-
-        // change title with input
-        $('#data-header')[0].innerHTML = data
-
-        // clear the input
-        $('#input-title').val('')
-      }
 
     </script>
   </body>
