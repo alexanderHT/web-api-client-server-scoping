@@ -41,17 +41,20 @@
     <script type="text/javascript">
       /* function to change the title */
       function change(){
-        // assign input to varibale data
-        let data = $('#input-title').val()
-        console.log(data);
+        if ($('#input-title').val()) {
+          // assign input to varibale data
+          let data = $('#input-title').val()
+          console.log(data);
 
-        // change title with input
-        $('#data-header')[0].innerHTML = data
+          // change title with input
+          $('#data-header')[0].innerHTML = data
 
-        // clear the input
-        $('#input-title').val('')
+          // clear the input
+          $('#input-title').val('')
+        }else{
+          alert('please fill the form first')
+        }
       }
-
     </script>
   </body>
 </html>
