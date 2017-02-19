@@ -1,0 +1,22 @@
+{
+  "name": "client side scoping",
+  "homepage": "https://github.com/alexanderHT/web-api-client-server-scoping",
+  "authors": [
+    "alexanderHT <alexanderhendrawan@gmail.com>"
+  ],
+  "description": "client side scoping",
+  "main": "index.html",
+  "keywords": [
+    "jquery",
+    "purl",
+    "materializecss"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
