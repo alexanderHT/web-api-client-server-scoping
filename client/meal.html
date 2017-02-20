@@ -37,15 +37,28 @@
     <script type="text/javascript" src="./bower_components/jquery/dist/jquery.js"></script>
     <script type="text/javascript" src="./bower_components/materialize/bin/materialize.js"></script>
     <script type="text/javascript">
+    // create varibale data to fill it with array
+    var data = '';
 
-    function random(){
+    /* checking is data meals from server already get it or not */
+    if(sessionStorage.getItem("data-meals")){
+      // if data meals from server already get, it will parsing array into data variable
+      data = JSON.parse(sessionStorage.getItem("data-meals"))
+    }else{
+      // if data meals from server not get yet, it will request ajax to get it from server and parsing it into data variable
       $.ajax({
         url: "http://localhost:3000/meals",
         type: 'post',
         success: function( result ) {
-          $('#meal').html(result)
+          sessionStorage.setItem("data-meals", JSON.stringify(result) );
+          data = JSON.parse(sessionStorage.getItem("data-meals"))
         }
       });
+    }
+
+    // when button click it will randomly give you a random meals
+    function random(){
+      $('#meal').html(`${data[Math.floor(Math.random() * data.length )]}`)
     }
     </script>
   </body>
