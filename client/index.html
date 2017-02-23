@@ -27,8 +27,7 @@
 
     <!-- content -->
     <div class="container">
-      <h1 id="data-header" class="blue-text">Change the title with what ever you like</h1>
-      <input type="text" id="input-title">
+      <h1 id="titleMe" class="blue-text" data-header="hello i'am a title from value of data-header">This title will change by value of data-header</h1>
       <a class="waves-effect btn blue" onclick="change()">Change the title</a>
     </div>
     <!-- content -->
@@ -40,19 +39,7 @@
     <script type="text/javascript">
       /* function to change the title */
       function change(){
-        if ($('#input-title').val()) {
-          // assign input to varibale data
-          let data = $('#input-title').val()
-          console.log(data);
-
-          // change title with input
-          $('#data-header')[0].innerHTML = data
-
-          // clear the input
-          $('#input-title').val('')
-        }else{
-          alert('please fill the form first')
-        }
+        document.getElementById('titleMe').innerHTML = document.getElementById('titleMe').dataset.header
       }
     </script>
   </body>
